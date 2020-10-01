@@ -5,6 +5,7 @@ public class ThreadTest {
     public static void main(String[] args) throws InterruptedException {
         int CONCURRENT_THREAD_COUNT = 1_000_000;
         Thread[] allThreads = new Thread[CONCURRENT_THREAD_COUNT];
+        long start = System.currentTimeMillis();
         for(int l=0; l<CONCURRENT_THREAD_COUNT;l++) {
             Thread t = new Thread(new Runnable() {
                 @SneakyThrows
@@ -19,5 +20,7 @@ public class ThreadTest {
             t.start();
             allThreads[l] = t;
         }
+        long end = System.currentTimeMillis();
+        System.out.println("Time elapsed: " + (end-start)/1000 + "s");
     }
 }
