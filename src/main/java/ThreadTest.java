@@ -20,6 +20,9 @@ public class ThreadTest {
             t.start();
             allThreads[l] = t;
         }
+        for(int l=0; l<CONCURRENT_THREAD_COUNT;l++) {
+            allThreads[l].join();
+        }
         long end = System.currentTimeMillis();
         System.out.println("Time elapsed: " + (end-start)/1000 + "s");
     }
