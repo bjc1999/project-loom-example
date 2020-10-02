@@ -5,9 +5,9 @@ The JDK version we ran is JDK 13.
 ### Performance Monitor & Memory Usage:
 
 With Project Loom Fibers:
-![Image of fiber profiler](./img/Screenshot 2020-10-01 at 2.38.08 PM.png)
+![Image of fiber profiler](https://raw.githubusercontent.com/jiuntian/project-loom-example/fix/readme-image/img/Screenshot%202020-10-01%20at%202.38.08%20PM.png)
 Memory Usage is 930M and CPU peaked at ~40%. 27 system threads created and completed in 7s.
 
 With Java Thread:
-![Image of thread profiler](./img/Screenshot 2020-10-01 at 2.42.34 PM.png)
+![Image of thread profiler](https://raw.githubusercontent.com/jiuntian/project-loom-example/fix/readme-image/img/Screenshot%202020-10-01%20at%202.42.34%20PM.png)
 The JVM crashed after created 4k threads.
