@@ -1,6 +1,7 @@
 public class FiberTest {
     static int a;
     public static void main(String[] args) {
+        long start = System.currentTimeMillis();
         int CONCURRENT_THREAD_COUNT = 1_000_000;
         Fiber[] allFibers = new Fiber[CONCURRENT_THREAD_COUNT];
         for(int l=0; l<CONCURRENT_THREAD_COUNT;l++) {
@@ -19,5 +20,7 @@ public class FiberTest {
             });
             allFibers[l] = t;
         }
+        long end = System.currentTimeMillis();
+        System.out.println("Time elapsed: " + (end-start)/1000 + "s");
     }
 }
