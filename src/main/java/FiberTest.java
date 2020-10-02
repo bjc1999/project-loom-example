@@ -20,6 +20,9 @@ public class FiberTest {
             });
             allFibers[l] = t;
         }
+        for(int l=0; l<CONCURRENT_THREAD_COUNT;l++) {
+            allFibers[l].join();
+        }
         long end = System.currentTimeMillis();
         System.out.println("Time elapsed: " + (end-start)/1000 + "s");
     }
