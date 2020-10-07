@@ -24,6 +24,7 @@ public class TestController {
     public GetStatusResponse getStatus() throws Exception {
         GetStatusResponse response = new GetStatusResponse();
         response.setMessage("OK OK NO PROBLEM");
+        Thread.sleep(1000);
         return response;
     }
 }
