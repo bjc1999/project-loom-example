@@ -4,6 +4,7 @@ COPY . .
 RUN mvn clean install -DskipTests
 
 FROM loom-jdk:13
+ARG SPRING_PROFILE
 COPY --from=MAVEN_TOOL_CHAIN /opt/target/spring-loom-test*.jar spring-loom-test.jar
 COPY --from=MAVEN_TOOL_CHAIN /opt/newrelic/newrelic.yml newrelic.yml
 COPY --from=MAVEN_TOOL_CHAIN /opt/target/newrelic* newrelic-agent.jar
